@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+            <a href="#" class="navbar-brand">News</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="table">
+                <!-- Importación de plantilla ejs-->
+                    <% include table %>
+            </div>
+            <div class="col-md-6 mt-4  card">
+                <form action="/news" method="POST" class="card-body">
+                    <h3 class="card-title">Add a News</h3>
+                    <div class="form-group">
+                      <label for=""></label>
+                      <input type="text" id="title" name="title"  class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" name="news"  class="form-control" placeholder="Content">
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Establecemos foco en input title cada vez que se recarga la pagina
+        document.getElementById('title').focus()
+    </script>
+</body>
+</html>

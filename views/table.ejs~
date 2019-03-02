@@ -1,0 +1,36 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>News</th>   
+                <th>Date</th>         
+        </tr>
+    </thead>
+    <% for(var i=0;i<news.length;i++){%>
+        <tr>
+            <td><%= news[i].id_news%></td>
+            <td><%= news[i].title%></td>
+            <td><%= news[i].news%></td>
+            <td><%= news[i].data_created%></td>
+            <td>
+				<div style="float:left">
+												
+					<form method="post" action="/del" style="float:right">
+						<input type="submit" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+						<input type="hidden" name="id_news" value=<%= news[i].id_news%>>
+					</form>
+				</div>
+			</td>
+			<td>
+			     <style="float:left">
+												
+					<form method="post" action="/edi" style="float:right">
+						<input type="submit" value='Editar' onClick="return confirm('Are you sure you want to delete?')" />
+						<input type="hidden" name="id_news" value=<%= news[i].id_news%>>
+					</form>
+				</div>
+			</td>
+			</td>
+    <%}%>
+</table>
